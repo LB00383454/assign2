@@ -127,13 +127,13 @@ void draw(){
          float frogCY = frogY+frogH/2;
          
          // car1 hitTest
-         if (leftCar1X+32 >frogCX && frogCX > leftCar1X && leftCar1Y == frogY){
+         if (leftCar1X+32>frogCX && frogCX > leftCar1X && leftCar1Y <  frogCY && frogCY < leftCar1Y + 32){
           image(imgDeadFrog, frogX, frogY);
           life--;
           gameState = FROG_DIE;   
          }         
          // car2 hitTest
-         if (rightCar2X < frogCX && frogCX < rightCar2X+32 && rightCar1Y == frogY){
+         if (rightCar1X < frogCX && frogCX < rightCar1X+32 && rightCar1Y <  frogCY && frogCY < rightCar1Y + 32){
           image(imgDeadFrog, frogX, frogY);
           life--;
           gameState = FROG_DIE;   
@@ -145,7 +145,7 @@ void draw(){
           gameState = FROG_DIE;   
          }        
          // car4 hitTest
-         if (rightCar2X-32 == frogX+32 && rightCar2Y == frogY){
+         if (rightCar2X < frogCX && frogCX < rightCar2X+32 && rightCar2Y <  frogCY && frogCY < rightCar2Y + 32){
           image(imgDeadFrog, frogX, frogY);
           life--;
           gameState = FROG_DIE;   
