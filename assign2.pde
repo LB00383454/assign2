@@ -213,11 +213,15 @@ void keyPressed() {
          frogY = 448;
          }
 }
-    if(key==ENTER /*still needs something*/){
-      gameState = GAME_RUN;
-      life=3;
-      frogX = frogInitX;
-      frogY = frogInitY;
+    if(key==ENTER /*still needs something*/){      
+      if (gameState == GAME_START ||
+          gameState == GAME_WIN   ||
+          gameState == GAME_LOSE){
+        gameState = GAME_RUN;
+        life = 3;
+        frogX = frogInitX;
+        frogY = frogInitY;   
+      }
     }
     
     
